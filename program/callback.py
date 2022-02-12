@@ -10,7 +10,6 @@ from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMa
 from config import (
     BOT_USERNAME,
     GROUP_SUPPORT,
-    OWNER_USERNAME,
     UPDATES_CHANNEL,
     SUDO_USERS,
     OWNER_ID,
@@ -36,14 +35,14 @@ async def start_set(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(
-                        "➕ Add me to your Group ➕",
+                        "🖤 Add me to your Group 🖤",
                         url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                     )
                 ],
                 [InlineKeyboardButton("❓ Basic Guide", callback_data="user_guide")],
                 [
                     InlineKeyboardButton("🖤 Commands", callback_data="command_list"),
-                    InlineKeyboardButton("🖤 Donate", url="https://t.me/{OWNER_USERNAME}"),
+                    InlineKeyboardButton("🌐 Source Code", url="https://telegra.ph/file/902458fb6dffa5d968769.jpg"),
                 ],
                 [
                     InlineKeyboardButton(
@@ -112,7 +111,7 @@ async def guide_set(_, query: CallbackQuery):
 
 💡 If you have a follow-up questions about this bot, you can tell it on my support chat here: @{GROUP_SUPPORT}.""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="home_start")]]
+            [[InlineKeyboardButton("🖤 Go Back", callback_data="home_start")]]
         ),
     )
 
@@ -125,7 +124,7 @@ async def commands_set(_, query: CallbackQuery):
         return
     await query.answer("commands menu")
     await query.edit_message_text(
-        f"""✨ **Hello [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**
+        f"""🎵 **Hello [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**
 
 » Check out the menu below to read the module information & see the list of available Commands !
 
@@ -135,14 +134,14 @@ All commands can be used with (`! / .`) handler""",
                 [
                     InlineKeyboardButton("» Quick use Guide «", callback_data="quick_use"),
                 ],[
-                    InlineKeyboardButton("👮🏻‍♀️ Admins Commands", callback_data="admin_command"),
+                    InlineKeyboardButton("🖤 Admins Commands", callback_data="admin_command"),
                 ],[
-                    InlineKeyboardButton("👩🏻‍💼 Users Commands", callback_data="user_command"),
+                    InlineKeyboardButton("🖤 Users Commands", callback_data="user_command"),
                 ],[
                     InlineKeyboardButton("Sudo Commands", callback_data="sudo_command"),
                     InlineKeyboardButton("Owner Commands", callback_data="owner_command"),
                 ],[
-                    InlineKeyboardButton("🔙 Go Back", callback_data="home_start")
+                    InlineKeyboardButton("🖤 Go Back", callback_data="home_start")
                 ],
             ]
         ),
@@ -172,9 +171,9 @@ async def user_set(_, query: CallbackQuery):
 » /uptime - show the bot uptime status
 » /alive - show the bot alive info (in Group only)
 
-⚡️ __Powered by {BOT_NAME} AI__""",
+🖤 __Powered by {BOT_NAME} AI__""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="command_list")]]
+            [[InlineKeyboardButton("🖤 Go Back", callback_data="command_list")]]
         ),
     )
 
@@ -232,9 +231,9 @@ async def sudo_set(_, query: CallbackQuery):
 » /eval - execute any code (`developer stuff`)
 » /sh - run any command (`developer stuff`)
 
-⚡ __Powered by {BOT_NAME} AI__""",
+🖤 __Powered by {BOT_NAME} AI__""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="command_list")]]
+            [[InlineKeyboardButton("🖤 Go Back", callback_data="command_list")]]
         ),
     )
 
@@ -262,9 +261,9 @@ async def owner_set(_, query: CallbackQuery):
 » /broadcast (`message`) - send a broadcast message to all groups in bot database
 » /broadcast_pin (`message`) - send a broadcast message to all groups in bot database with the chat pin
 
-⚡ __Powered by {BOT_NAME} AI__""",
+🖤 __Powered by {BOT_NAME} AI__""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="command_list")]]
+            [[InlineKeyboardButton("🖤 Go Back", callback_data="command_list")]]
         ),
     )
 
@@ -277,7 +276,7 @@ async def at_set_markup_menu(_, query: CallbackQuery):
         return
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
-        return await query.answer("💡 Only admin with manage video chat permission that can tap this button !", show_alert=True)
+        return await query.answer("🖤 Only admin with manage video chat permission that can tap this button !", show_alert=True)
     chat_id = query.message.chat.id
     user_id = query.message.from_user.id
     buttons = menu_markup(user_id)
