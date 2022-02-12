@@ -43,7 +43,7 @@ async def start_set(_, query: CallbackQuery):
                 [InlineKeyboardButton("❓ Basic Guide", callback_data="user_guide")],
                 [
                     InlineKeyboardButton("🖤 Commands", callback_data="command_list"),
-                    InlineKeyboardButton("🖤 Donate", url=f"https://t.me/{OWNER_USERNAME}"),
+                    InlineKeyboardButton("🖤 Donate", url="https://t.me/{OWNER_USERNAME}"),
                 ],
                 [
                     InlineKeyboardButton(
