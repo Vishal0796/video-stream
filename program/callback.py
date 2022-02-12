@@ -42,20 +42,20 @@ async def start_set(_, query: CallbackQuery):
                 ],
                 [InlineKeyboardButton("❓ Basic Guide", callback_data="user_guide")],
                 [
-                    InlineKeyboardButton("📚 Commands", callback_data="command_list"),
-                    InlineKeyboardButton("❤ Donate", url=f"https://t.me/{OWNER_USERNAME}"),
+                    InlineKeyboardButton("🖤 Commands", callback_data="command_list"),
+                    InlineKeyboardButton("🖤 Donate", url=f"https://t.me/{OWNER_USERNAME}"),
                 ],
                 [
                     InlineKeyboardButton(
-                        "👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}"
+                        "🖤 Official Group", url=f"https://t.me/{GROUP_SUPPORT}"
                     ),
                     InlineKeyboardButton(
-                        "📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "🖤 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        "🌐 Source Code", url="https://github.com/levina-lab/video-stream"
+                        "🥀 Ow🅽e͢͢͢ɹ⏤͟͟͞͞★", url=f"https://t.me/Ti_amo_F_amore_mio_2912"
                     )
                 ],
             ]
