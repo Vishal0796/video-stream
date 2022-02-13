@@ -1,32 +1,3 @@
-# Copyright (C) 2021 By VeezMusicProject
-
-from driver.core import user, bot
-from driver.queues import QUEUE
-from driver.database.dbpunish import is_gbanned_user
-from pyrogram import Client, filters
-from program.utils.inline import menu_markup, stream_markup
-from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
-
-from config import (
-    BOT_USERNAME,
-    GROUP_SUPPORT,
-    UPDATES_CHANNEL,
-    SUDO_USERS,
-    OWNER_ID,
-)
-
-
-@Client.on_callback_query(filters.regex("home_start"))
-async def start_set(_, query: CallbackQuery):
-    user_id = query.from_user.id
-    BOT_NAME = (await bot.get_me()).first_name
-    if await is_gbanned_user(user_id):
-        await query.answer("❗️ You've blocked from using this bot!", show_alert=True)
-        return
-    await query.answer("home start")
-    await query.edit_message_text(
-        f"""✨ **Welcome [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**\n
-💭 [{BOT_NAME}](https://t.me/{BOT_USERNAME}) **Is a bot to play music and video in groups, through the Telegram Group video chat!**
 
 💡 **Find out all the Bot's commands and how they work by clicking on the » 📚 Commands button!**
 
